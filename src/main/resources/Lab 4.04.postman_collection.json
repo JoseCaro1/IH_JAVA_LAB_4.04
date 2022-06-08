@@ -1,0 +1,171 @@
+{
+	"info": {
+		"_postman_id": "096e1910-3c8c-4fb7-a7ce-b2ea3c4cce4c",
+		"name": "Lab 4.04",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "15401921"
+	},
+	"item": [
+		{
+			"name": "Doctor add",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"id\":126,\r\n    \"name\":\"Paco\",\r\n    \"department\":\"Psiquiatria\",\r\n    \"status\":\"OFF\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/doctor/add",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"doctor",
+						"add"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Patient Add",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\":\"Paco\",\r\n    \"dateOfBirth\":\"2001-01-30\",\r\n    \"admittedBy\": 124\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/patient/add",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"patient",
+						"add"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Edit Patient",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"id\": 3,\r\n    \"name\": \"Pa\",\r\n    \"dateOfBirth\": \"2001-01-30T00:00:00.000+00:00\",\r\n    \"admittedBy\": {\r\n        \"id\": 130\r\n    }\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/patient/id/:id/update-all",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"patient",
+						"id",
+						":id",
+						"update-all"
+					],
+					"variable": [
+						{
+							"key": "id",
+							"value": "3"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Doctor Remove",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/doctor/id/:id/remove",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"doctor",
+						"id",
+						":id",
+						"remove"
+					],
+					"variable": [
+						{
+							"key": "id",
+							"value": "123"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update Status Doctor",
+			"request": {
+				"method": "PATCH",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"status\":\"OFF\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/doctor/id/:id/update/status",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"doctor",
+						"id",
+						":id",
+						"update",
+						"status"
+					],
+					"variable": [
+						{
+							"key": "id",
+							"value": "126"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

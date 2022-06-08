@@ -15,7 +15,7 @@ public class Doctor {
     private String department;
     @Enumerated(EnumType.STRING)
     private Status status;
-    @OneToMany(mappedBy = "admittedBy")
+    @OneToMany(mappedBy = "admittedBy", cascade = CascadeType.ALL)
     @JsonIgnore
     private List<Patient> patients;
 
@@ -58,4 +58,6 @@ public class Doctor {
     public void setPatients(List<Patient> patients) {
         this.patients = patients;
     }
+
+
 }

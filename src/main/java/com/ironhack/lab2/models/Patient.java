@@ -5,6 +5,15 @@ import java.util.Date;
 
 @Entity
 public class Patient {
+    public Patient(String name, Date dateOfBirth, Doctor admittedBy) {
+        this.name = name;
+        this.dateOfBirth = dateOfBirth;
+        this.admittedBy = admittedBy;
+    }
+
+    public Patient() {
+
+    }
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -46,5 +55,6 @@ public class Patient {
 
     @ManyToOne
     @JoinColumn(name = "admitted_by")
+
     private Doctor admittedBy;
 }
